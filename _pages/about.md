@@ -8,8 +8,9 @@ redirect_from:
   - /about.html
 ---
 
-Hi! I'm Zach (Zhenyu) Wang, a PhD Candidate in the Statistics Department at Rutgers University. 
+Hi! I'm Zach (Zhenyu) Wang, a 2nd Year PhD in the Statistics Department at Rutgers University. 
 Currently, I am co-advised by Professor Zijian Guo and Professor Minge Xie, with an anticipated graduation in May 2027. 
+
 Prior to this, I earned my bachelor's degree in Finance from Shanghai JiaoTong University in 2019, where I had the good fortune of receiving guidance from Professor Huizhang Shen. 
 Subsequently, I pursued my graduate degree in Applied Analytics at Columbia University in 2021.
 
