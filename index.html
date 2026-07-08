@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"><style>body{margin:0;background:#fdfdfc;color:#1c1b19}a{color:#b0263d;text-decoration:none}a:hover{text-decoration:underline}</style></helmet>
+
+<div data-screen-label="Home" style="min-height:100vh;display:flex;flex-direction:column;font-family:'Source Sans 3',sans-serif;font-size:17px;line-height:1.65;zoom:{{ textZoom }}">
+
+  <div style="border-bottom:1px solid #e8e6e1">
+    <div style="max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 28px;flex-wrap:wrap">
+      <a href="index.html" style="font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:#1c1b19">Zhenyu (Zach) Wang</a>
+      <div style="display:flex;gap:26px;font-size:14px;font-weight:500">
+        <a href="index.html" style="color:#1c1b19;border-bottom:2px solid #b0263d;padding-bottom:2px">Home</a>
+        <a href="blog.html" style="color:#5a5751">Blog</a>
+        <a href="teaching.html" style="color:#5a5751">Teaching</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="width:100%;height:min(300px,34vw);overflow:hidden">
+    <img src="assets/wedding-banner.jpg" alt="Our wedding by the Raritan River, October 2025" style="width:100%;height:100%;object-fit:cover;object-position:62% 58%;display:block">
+  </div>
+
+  <div style="flex:1;width:100%;max-width:860px;margin:0 auto;box-sizing:border-box;padding:48px 28px 24px">
+
+    <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
+      <div style="flex:1;min-width:320px">
+        <h1 style="margin:0 0 4px;font-family:'Source Serif 4',serif;font-size:34px;font-weight:600;line-height:1.15">Zhenyu (Zach) Wang <span style="font-weight:400">王振宇</span></h1>
+        <p style="margin:0 0 18px;color:#7a766e;font-size:15px">Ph.D. Candidate in Statistics · Rutgers University</p>
+        <p style="margin:0;color:#3a3833">I am a fourth-year Ph.D. student in Statistics at Rutgers University. My research focuses on <strong>distributional robustness</strong>, <strong>causal inference</strong>, and <strong>non-regular statistical inference</strong>. I have the privilege of being mentored by Prof. <a href="https://statweb.rutgers.edu/zijguo/index.html">Zijian Guo</a> and Prof. <a href="https://sites.google.com/view/yifan-hu">Yifan Hu</a>. Before my doctoral studies, I completed a Master's degree at Columbia University and earned my Bachelor's degree in Finance from Shanghai Jiao Tong University.</p>
+        <div style="display:flex;gap:18px;margin-top:16px;font-size:14px;font-weight:500;flex-wrap:wrap">
+          <a href="mailto:zw425@stat.rutgers.edu">zw425@stat.rutgers.edu</a>
+          <a href="https://scholar.google.com/citations?user=gvvAyzYAAAAJ">Google Scholar</a>
+          <a href="https://github.com/zywang0701">GitHub</a>
+          <a href="https://www.researchgate.net/profile/Zhenyu-Wang-136">ResearchGate</a>
+        </div>
+      </div>
+      <div style="width:168px;height:200px;flex:none">
+        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="headshot" shape="rounded" radius="8" placeholder="Drop your headshot" src="assets/headshot.jpeg" hint-size="168px,200px" style="width:168px;height:200px"></x-import>
+      </div>
+    </div>
+
+    <div style="margin-top:40px">
+      <h2 style="margin:0 0 14px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;border-bottom:1px solid #e8e6e1;padding-bottom:8px">News</h2>
+      <div style="display:grid;gap:9px;font-size:16px;color:#3a3833">
+        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">Dec 2025</span><span>Invited talk at NeurIPS, San Diego.</span></div>
+        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">Oct 2025</span><span>Invited talk at the INFORMS Annual Meeting, Atlanta.</span></div>
+        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">Aug 2025</span><span>Invited talk at the Joint Statistical Meetings (JSM), Nashville.</span></div>
+        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">Jul 2025</span><span>New preprint: <a href="https://arxiv.org/abs/2507.09905">Statistical Analysis of Conditional Group DRO with Cross-Entropy Loss</a>.</span></div>
+        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">2025</span><span>ETH Zurich Young Researcher Travel Award · Researcher Fellowship, Department of Statistics, Rutgers.</span></div>
+        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">2024</span><span>“Distributionally Robust Learning for Multi-source Unsupervised Domain Adaptation” accepted by the <em>Annals of Statistics</em>.</span></div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px">
+      <h2 style="margin:0 0 14px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;border-bottom:1px solid #e8e6e1;padding-bottom:8px">Publications</h2>
+
+      <p style="margin:0 0 12px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#9a958b;font-weight:600">Multi-source &amp; Distributional Robustness</p>
+      <div style="display:grid;gap:18px;font-size:16px">
+        <div>
+          <span style="font-weight:600">StablePCA: Distributionally Robust Learning of Shared Representations from Multi-Source Data</span><br>
+          <span style="color:#6e6a62"><strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong>, Molei Liu, Jing Lei, Francis Bach, Zijian Guo · arXiv:2505.00940, 2025</span><br>
+          <span style="font-size:14px;font-weight:500"><a href="https://arxiv.org/abs/2505.00940">paper</a> · <a href="blog-stablepca.html">blog</a></span>
+        </div>
+        <div>
+          <span style="font-weight:600">Statistical Analysis of Conditional Group Distributionally Robust Optimization with Cross-Entropy Loss</span><br>
+          <span style="color:#6e6a62">Zijian Guo, <strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong>, Yifan Hu, Francis Bach · arXiv:2507.09905, 2025</span><br>
+          <span style="font-size:14px;font-weight:500"><a href="https://arxiv.org/abs/2507.09905">paper</a> · <a href="blog-cgdro.html">blog</a></span>
+        </div>
+        <div>
+          <span style="font-weight:600">Causal Invariance Learning via Efficient Nonconvex Optimization</span><br>
+          <span style="color:#6e6a62"><strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong>, Yifan Hu, Peter Bühlmann, Zijian Guo · arXiv:2412.11850, 2024</span><br>
+          <span style="font-size:14px;font-weight:500"><a href="https://arxiv.org/abs/2412.11850">paper</a> · <a href="https://drive.google.com/file/d/1i5ClU2Ca0Yi95lH3hujVyXWOuHZDurf0/view?usp=sharing">slides (20 min)</a> · <a href="blog-causal-invariance.html">blog</a></span>
+        </div>
+        <div>
+          <span style="font-weight:600">Distributionally Robust Learning for Multi-source Unsupervised Domain Adaptation</span><br>
+          <span style="color:#6e6a62"><strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong>, Peter Bühlmann, Zijian Guo · <em>The Annals of Statistics</em>, 2025</span><br>
+          <span style="font-size:14px;font-weight:500"><a href="https://arxiv.org/abs/2309.02211">paper</a> · <a href="https://drive.google.com/file/d/1DB-8P4KNQw2JvQtYcc1bRrczdeaAxolI/view?usp=sharing">slides (10 min)</a> · <a href="blog-dro-multisource.html">blog</a></span>
+        </div>
+      </div>
+
+      <p style="margin:26px 0 12px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#9a958b;font-weight:600">High-dimensional Statistics</p>
+      <div style="display:grid;gap:18px;font-size:16px">
+        <div>
+          <span style="font-weight:600">SIHR: Statistical Inference in High-Dimensional Linear and Logistic Regression Models</span><br>
+          <span style="color:#6e6a62">Prabrisha Rakshit, <strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong> (co-first author), T. Tony Cai, Zijian Guo · <em>The R Journal</em>, 2024</span><br>
+          <span style="font-size:14px;font-weight:500"><a href="https://zywang0701.github.io/SIHR/">website</a> · <a href="https://arxiv.org/abs/2109.03365">paper</a> · <a href="blog-sihr.html">blog</a></span>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin-top:40px">
+      <h2 style="margin:0 0 14px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;border-bottom:1px solid #e8e6e1;padding-bottom:8px">Software</h2>
+      <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:14px">
+        <a href="https://zywang0701.github.io/SIHR/" style="border:1px solid #e8e6e1;border-radius:6px;padding:7px 13px;color:#3a3833"><strong>SIHR</strong> · inference in high-dim regression</a>
+        <a href="https://cran.r-project.org/web/packages/RobustIV/index.html" style="border:1px solid #e8e6e1;border-radius:6px;padding:7px 13px;color:#3a3833"><strong>RobustIV</strong> · robust instrumental variables</a>
+        <a href="https://cran.r-project.org/web/packages/MaximinInfer/index.html" style="border:1px solid #e8e6e1;border-radius:6px;padding:7px 13px;color:#3a3833"><strong>MaximinInfer</strong> · inference for maximin effects</a>
+        <a href="https://cran.r-project.org/web/packages/DLL/index.html" style="border:1px solid #e8e6e1;border-radius:6px;padding:7px 13px;color:#3a3833"><strong>DLL</strong> · decorrelated local linear estimator</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div style="border-top:1px solid #e8e6e1;margin-top:48px">
+    <p style="max-width:860px;margin:0 auto;padding:18px 28px;font-size:13px;color:#9a958b">© 2026 Zhenyu (Zach) Wang 王振宇</p>
+  </div>
+</div>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;textZoom&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.05,&quot;min&quot;:0.9,&quot;max&quot;:1.25,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typography&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      textZoom: this.props.textZoom ?? 1
+    };
+  }
+}
+</script>
+</body>
+</html>

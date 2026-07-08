@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script><style>body{margin:0;background:#fdfdfc;color:#1c1b19}a{color:#b0263d;text-decoration:none}a:hover{text-decoration:underline}.katex-display{margin:22px 0;overflow-x:auto;overflow-y:hidden;padding:2px 0}.katex{font-size:1.02em}</style></helmet>
+
+<div data-screen-label="Blog: DRO Multi-source" style="min-height:100vh;display:flex;flex-direction:column;font-family:'Source Sans 3',sans-serif;font-size:17px;line-height:1.7">
+
+  <div style="border-bottom:1px solid #e8e6e1">
+    <div style="max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 28px;flex-wrap:wrap">
+      <a href="index.html" style="font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:#1c1b19">Zhenyu (Zach) Wang</a>
+      <div style="display:flex;gap:26px;font-size:14px;font-weight:500">
+        <a href="index.html" style="color:#5a5751">Home</a>
+        <a href="blog.html" style="color:#1c1b19;border-bottom:2px solid #b0263d;padding-bottom:2px">Blog</a>
+        <a href="teaching.html" style="color:#5a5751">Teaching</a>
+      </div>
+    </div>
+  </div>
+
+  <div data-katex-root style="flex:1;width:100%;max-width:720px;margin:0 auto;box-sizing:border-box;padding:44px 28px 24px">
+    <a href="blog.html" style="font-size:14px;font-weight:500">← All posts</a>
+    <h1 style="margin:14px 0 10px;font-family:'Source Serif 4',serif;font-size:32px;font-weight:600;line-height:1.2">Learning models that hold up on unseen populations</h1>
+    <p style="margin:0 0 30px;color:#7a766e;font-size:15px"><em>The Annals of Statistics</em>, 2025 · with Peter Bühlmann, Zijian Guo · <a href="https://arxiv.org/abs/2309.02211">arXiv:2309.02211</a></p>
+
+    <h2 style="margin:0 0 8px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">The problem</h2>
+    <p style="margin:0 0 22px;color:#2e2c27">You have labeled data from several hospitals, or several regions, or several years, and you want a prediction model that works on a <em>new</em> population you haven't sampled yet. The default move — pool everything and minimize average error — quietly optimizes for the majority source and can perform badly exactly where the target differs most. What we want instead is a model whose performance degrades gracefully across <em>any</em> plausible target that looks like a mixture of the sources we've seen.</p>
+
+    <h2 style="margin:0 0 8px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">A reward, and its worst case</h2>
+    <p style="margin:0 0 6px;color:#2e2c27">We score a model \(f\) on a distribution \(T\) by its <em>reward</em> — how much of the outcome's variance it explains relative to predicting nothing:</p>
+    \[ R_T(f) \;=\; \mathbb E_{(X,Y)\sim T}\big[\, Y^2 - (Y - f(X))^2 \,\big]. \]
+    <p style="margin:0 0 6px;color:#2e2c27">Then we build an uncertainty set \(\mathcal C(Q_X)\) of target distributions whose conditional \(Y\mid X\) is a mixture of the sources', and define the robust model as the one whose <strong>worst-case</strong> reward over that set is largest:</p>
+    \[ f^\star \;=\; \arg\max_{f\in\mathcal F}\ \min_{T\in\mathcal C(Q_X)} R_T(f). \]
+    <p style="margin:0 0 22px;color:#2e2c27">This reward-based formulation matters: unlike squared-error or regret losses, it stays computationally tractable under arbitrary convex prior information about the target and does not let a high-noise source distort the aggregation.</p>
+
+    <h2 style="margin:0 0 8px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">The clean characterization</h2>
+    <p style="margin:0 0 6px;color:#2e2c27">The headline result (Theorem 2.1) is that this minimax model is nothing more exotic than a <strong>weighted average of the individual source models</strong> \(f^{(l)}\), with weights that solve a small convex quadratic program:</p>
+    \[ f^\star \;=\; \sum_{l=1}^{L} q^\star_l\, f^{(l)}, \qquad q^\star \;=\; \arg\min_{q\in\Delta_L}\ q^\top \Gamma\, q, \]
+    <p style="margin:0 0 6px;color:#2e2c27">where \(\Gamma\) is the Gram matrix of the source models. Geometrically, \(f^\star\) is simply the point in the convex hull of the source models that sits closest to the null model — a picture worth more than the formula:</p>
+
+    <figure style="margin:30px 0">
+      <div style="border:1px solid #e8e6e1;border-radius:10px;background:#faf9f7;padding:22px 24px 18px">
+        <svg viewBox="0 0 660 230" style="width:100%;height:auto;display:block" font-family="'Source Sans 3',sans-serif">
+          <polygon points="300,55 470,140 300,175" fill="#b0263d" fill-opacity="0.07" stroke="#d8d3ca" stroke-width="1.2"></polygon>
+          <line x1="100" y1="150" x2="300" y2="150" stroke="#8f8a82" stroke-width="1.8" stroke-dasharray="6 5"></line>
+          <circle cx="100" cy="150" r="6" fill="#8f8a82"></circle>
+          <text x="100" y="176" font-size="13" fill="#7a766e" text-anchor="middle">0 · null model</text>
+          <circle cx="300" cy="55" r="6.5" fill="#3f6690"></circle><text x="300" y="46" font-size="13" fill="#3f6690" text-anchor="middle">f⁽¹⁾</text>
+          <circle cx="470" cy="140" r="6.5" fill="#b0832d"></circle><text x="484" y="144" font-size="13" fill="#8a6420">f⁽²⁾</text>
+          <circle cx="300" cy="175" r="6.5" fill="#2f8074"></circle><text x="300" y="195" font-size="13" fill="#2f8074" text-anchor="middle">f⁽³⁾</text>
+          <circle cx="300" cy="150" r="7" fill="#b0263d"></circle><text x="316" y="146" font-size="14" fill="#b0263d" font-weight="600">f★</text>
+          <text x="196" y="140" font-size="12" fill="#9a958b" text-anchor="middle" font-style="italic">shortest distance</text>
+          <text x="392" y="98" font-size="12.5" fill="#9a958b" text-anchor="middle">convex hull of source models</text>
+        </svg>
+      </div>
+      <figcaption style="margin-top:10px;font-size:13.5px;color:#7a766e;line-height:1.5"><span style="color:#b0263d;font-weight:600">Figure 1.</span> With three sources, the robust model \(f^\star\) is the point in the convex hull of the source models \(\{f^{(l)}\}\) closest to the null model — the least-conservative model that still guards against every mixture in the uncertainty set.</figcaption>
+    </figure>
+
+    <h2 style="margin:0 0 8px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">Why the characterization is useful</h2>
+    <p style="margin:0 0 22px;color:#2e2c27">Because \(f^\star\) is an aggregate of per-source models, you can fit each \(f^{(l)}\) with <em>any</em> machine-learning algorithm you like — random forests, gradient boosting, neural networks — and then combine them by solving the tiny QP. That also gives the method a federated-learning reading: sources never share raw data, only their fitted models, and the optimal weights \(q^\star\) reveal how important each source is for predicting a given target. Estimating those weights well is delicate, so we add a <strong>bias-corrected</strong> estimator that provably improves the convergence rate over the naive plug-in.</p>
+
+    <h2 style="margin:0 0 8px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600">Why it matters</h2>
+    <p style="margin:0 0 22px;color:#2e2c27">A model fit to pooled multi-source data optimizes for the population you happened to sample most. This framework instead produces a model that performs well for every mixture of the sources, computes efficiently through standard quadratic programming, respects privacy constraints, and comes with uncertainty quantification. It turns "will this model transfer?" from a hope into something you can optimize for directly.</p>
+
+    <div style="margin-top:8px;border:1px solid #e8e6e1;border-radius:8px;padding:16px 20px;font-size:14.5px;background:#faf9f7">
+      <span style="font-weight:600">Read the paper:</span> <a href="https://arxiv.org/abs/2309.02211">Distributionally Robust Learning for Multi-source Unsupervised Domain Adaptation</a> · <a href="https://drive.google.com/file/d/1DB-8P4KNQw2JvQtYcc1bRrczdeaAxolI/view?usp=sharing">slides (10 min)</a>
+    </div>
+  </div>
+
+  <div style="border-top:1px solid #e8e6e1;margin-top:48px">
+    <p style="max-width:860px;margin:0 auto;padding:18px 28px;font-size:13px;color:#9a958b">© 2026 Zhenyu (Zach) Wang 王振宇</p>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  componentDidMount() { this._tryKatex(0); }
+  _tryKatex(n) {
+    if (window.renderMathInElement) {
+      try {
+        window.renderMathInElement(document.querySelector('[data-katex-root]') || document.body, {
+          delimiters: [
+            { left: '\\[', right: '\\]', display: true },
+            { left: '\\(', right: '\\)', display: false }
+          ],
+          throwOnError: false
+        });
+      } catch (e) {}
+    } else if (n < 80) {
+      setTimeout(() => this._tryKatex(n + 1), 100);
+    }
+  }
+}
+</script>
+</body>
+</html>
