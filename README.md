@@ -1,39 +1,20 @@
-# Personal website — zywang0701.github.io
+# Personal website — Zhenyu (Zach) Wang
 
-Static site (no build step). Every page is a self-contained `.html` file; `support.js`
-is the small runtime that renders them and pulls React from a CDN at load time.
+Static HTML/CSS website for https://zywang0701.github.io/. No build step or JavaScript runtime is needed.
 
-## Files
-- `index.html` — Home
-- `blog.html`, `teaching.html`
-- `blog-stablepca.html`, `blog-cgdro.html`, `blog-causal-invariance.html`,
-  `blog-dro-multisource.html`, `blog-sihr.html`
-- `assets/` — wedding banner + headshot
-- `support.js`, `image-slot.js` — runtime (do not edit)
-- `.nojekyll` — tells GitHub Pages to serve files as-is (skip Jekyll)
+## Pages
+- `index.html`: profile, recent news, and three selected research projects
+- `research.html`: seven papers grouped by research theme
+- `teaching.html`: existing teaching records and resource links
+- `styles.css`: shared responsive layout and typography
 
-## Deploy to https://zywang0701.github.io/
+SIHR is linked from its paper. The former paper-explanation blogs and standalone software section have been removed. A future blog can be added for ideas and work habits.
 
-Your repo `zywang0701/zywang0701.github.io` uses the **master** branch. These commands
-replace the old Jekyll site with this one:
+## Preview
+Run `python -m http.server 8000` in this folder, then open http://localhost:8000/.
 
-```bash
-git clone https://github.com/zywang0701/zywang0701.github.io.git
-cd zywang0701.github.io
-git checkout master
+## Résumé
+The current research résumé is at assets/Zhenyu_Wang_Resume.pdf. The navigation and homepage link to this PDF.
 
-# remove the old site (keeps .git), then copy this folder's contents in:
-git rm -rf .
-cp -R /path/to/this/dist/. .
-
-git add -A
-git commit -m "Redesign personal website"
-git push origin master
-```
-
-Then in the repo on GitHub → **Settings → Pages**, make sure the source is
-**Deploy from a branch → master → / (root)**. The site goes live at
-`https://zywang0701.github.io/` within a minute or two.
-
-> Prefer to preview before replacing? Push to a `preview` branch first and set Pages to
-> serve from it, or just open `index.html` locally in a browser.
+## GitHub Pages
+Review locally before publishing. Copy the changed HTML, `styles.css`, and `papers/PRICE_ICLR.pdf` into the existing repository, and remove the six former `blog*.html` files. Preserve unrelated files, including any separately hosted SIHR project. Commit and push to the existing Pages source branch (the supplied repository uses `master`).

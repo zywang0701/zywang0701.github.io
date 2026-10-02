@@ -1,125 +1,20 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
-</head>
-<body>
-<x-dc>
-<helmet data-dc-atomics><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400..700;1,8..60,400..700&amp;family=Source+Sans+3:ital,wght@0,400;0,500;0,600;1,400&amp;display=swap" rel="stylesheet"><style>body{margin:0;background:#fdfdfc;color:#1c1b19}a{color:#b0263d;text-decoration:none}a:hover{text-decoration:underline}</style></helmet>
-
-<div data-screen-label="Home" style="min-height:100vh;display:flex;flex-direction:column;font-family:'Source Sans 3',sans-serif;font-size:17px;line-height:1.65;zoom:{{ textZoom }}">
-
-  <div style="border-bottom:1px solid #e8e6e1">
-    <div style="max-width:860px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:18px 28px;flex-wrap:wrap">
-      <a href="index.html" style="font-family:'Source Serif 4',serif;font-weight:600;font-size:17px;color:#1c1b19">Zhenyu (Zach) Wang</a>
-      <div style="display:flex;gap:26px;font-size:14px;font-weight:500">
-        <a href="index.html" style="color:#1c1b19;border-bottom:2px solid #b0263d;padding-bottom:2px">Home</a>
-        <a href="blog.html" style="color:#5a5751">Blog</a>
-        <a href="teaching.html" style="color:#5a5751">Teaching</a>
-      </div>
-    </div>
-  </div>
-
-  <div style="width:100%;height:min(300px,34vw);overflow:hidden">
-    <img src="assets/wedding-banner.jpg" alt="Our wedding by the Raritan River, October 2025" style="width:100%;height:100%;object-fit:cover;object-position:62% 58%;display:block">
-  </div>
-
-  <div style="flex:1;width:100%;max-width:860px;margin:0 auto;box-sizing:border-box;padding:48px 28px 24px">
-
-    <div style="display:flex;gap:40px;align-items:flex-start;flex-wrap:wrap">
-      <div style="flex:1;min-width:320px">
-        <h1 style="margin:0 0 4px;font-family:'Source Serif 4',serif;font-size:34px;font-weight:600;line-height:1.15">Zhenyu (Zach) Wang <span style="font-weight:400">王振宇</span></h1>
-        <p style="margin:0 0 18px;color:#7a766e;font-size:15px">Ph.D. Candidate in Statistics · Rutgers University</p>
-        <p style="margin:0;color:#3a3833">I am a fourth-year Ph.D. student in Statistics at Rutgers University. My research focuses on <strong>distributional robustness</strong>, <strong>causal inference</strong>, and <strong>non-regular statistical inference</strong>. I have the privilege of being mentored by Prof. <a href="https://statweb.rutgers.edu/zijguo/index.html">Zijian Guo</a> and Prof. <a href="https://sites.google.com/view/yifan-hu">Yifan Hu</a>. Before my doctoral studies, I completed a Master's degree at Columbia University and earned my Bachelor's degree in Finance from Shanghai Jiao Tong University.</p>
-        <div style="display:flex;gap:18px;margin-top:16px;font-size:14px;font-weight:500;flex-wrap:wrap">
-          <a href="mailto:zw425@stat.rutgers.edu">zw425@stat.rutgers.edu</a>
-          <a href="https://scholar.google.com/citations?user=gvvAyzYAAAAJ">Google Scholar</a>
-          <a href="https://github.com/zywang0701">GitHub</a>
-          <a href="https://www.researchgate.net/profile/Zhenyu-Wang-136">ResearchGate</a>
-        </div>
-      </div>
-      <div style="width:168px;height:200px;flex:none">
-        <x-import component-from-global-scope="image-slot" from="./image-slot.js" id="headshot" shape="rounded" radius="8" placeholder="Drop your headshot" src="assets/headshot.jpeg" hint-size="168px,200px" style="width:168px;height:200px"></x-import>
-      </div>
-    </div>
-
-    <div style="margin-top:40px">
-      <h2 style="margin:0 0 14px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;border-bottom:1px solid #e8e6e1;padding-bottom:8px">News</h2>
-      <div style="display:grid;gap:9px;font-size:16px;color:#3a3833">
-        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">Dec 2025</span><span>Invited talk at NeurIPS, San Diego.</span></div>
-        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">Oct 2025</span><span>Invited talk at the INFORMS Annual Meeting, Atlanta.</span></div>
-        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">Aug 2025</span><span>Invited talk at the Joint Statistical Meetings (JSM), Nashville.</span></div>
-        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">Jul 2025</span><span>New preprint: <a href="https://arxiv.org/abs/2507.09905">Statistical Analysis of Conditional Group DRO with Cross-Entropy Loss</a>.</span></div>
-        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">2025</span><span>ETH Zurich Young Researcher Travel Award · Researcher Fellowship, Department of Statistics, Rutgers.</span></div>
-        <div style="display:flex;gap:16px"><span style="flex:none;width:74px;color:#9a958b;font-size:14px">2024</span><span>“Distributionally Robust Learning for Multi-source Unsupervised Domain Adaptation” accepted by the <em>Annals of Statistics</em>.</span></div>
-      </div>
-    </div>
-
-    <div style="margin-top:40px">
-      <h2 style="margin:0 0 14px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;border-bottom:1px solid #e8e6e1;padding-bottom:8px">Publications</h2>
-
-      <p style="margin:0 0 12px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#9a958b;font-weight:600">Multi-source &amp; Distributional Robustness</p>
-      <div style="display:grid;gap:18px;font-size:16px">
-        <div>
-          <span style="font-weight:600">StablePCA: Distributionally Robust Learning of Shared Representations from Multi-Source Data</span><br>
-          <span style="color:#6e6a62"><strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong>, Molei Liu, Jing Lei, Francis Bach, Zijian Guo · arXiv:2505.00940, 2025</span><br>
-          <span style="font-size:14px;font-weight:500"><a href="https://arxiv.org/abs/2505.00940">paper</a> · <a href="blog-stablepca.html">blog</a></span>
-        </div>
-        <div>
-          <span style="font-weight:600">Statistical Analysis of Conditional Group Distributionally Robust Optimization with Cross-Entropy Loss</span><br>
-          <span style="color:#6e6a62">Zijian Guo, <strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong>, Yifan Hu, Francis Bach · arXiv:2507.09905, 2025</span><br>
-          <span style="font-size:14px;font-weight:500"><a href="https://arxiv.org/abs/2507.09905">paper</a> · <a href="blog-cgdro.html">blog</a></span>
-        </div>
-        <div>
-          <span style="font-weight:600">Causal Invariance Learning via Efficient Nonconvex Optimization</span><br>
-          <span style="color:#6e6a62"><strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong> (co-first author), Yifan Hu, Peter Bühlmann, Zijian Guo · arXiv:2412.11850, 2024</span><br>
-          <span style="font-size:14px;font-weight:500"><a href="https://arxiv.org/abs/2412.11850">paper</a> · <a href="https://drive.google.com/file/d/1i5ClU2Ca0Yi95lH3hujVyXWOuHZDurf0/view?usp=sharing">slides (20 min)</a> · <a href="blog-causal-invariance.html">blog</a></span>
-        </div>
-        <div>
-          <span style="font-weight:600">Distributionally Robust Learning for Multi-source Unsupervised Domain Adaptation</span><br>
-          <span style="color:#6e6a62"><strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong>, Peter Bühlmann, Zijian Guo · <em>The Annals of Statistics</em>, 2025</span><br>
-          <span style="font-size:14px;font-weight:500"><a href="https://arxiv.org/abs/2309.02211">paper</a> · <a href="https://drive.google.com/file/d/1DB-8P4KNQw2JvQtYcc1bRrczdeaAxolI/view?usp=sharing">slides (10 min)</a> · <a href="blog-dro-multisource.html">blog</a></span>
-        </div>
-      </div>
-
-      <p style="margin:26px 0 12px;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:#9a958b;font-weight:600">High-dimensional Statistics</p>
-      <div style="display:grid;gap:18px;font-size:16px">
-        <div>
-          <span style="font-weight:600">SIHR: Statistical Inference in High-Dimensional Linear and Logistic Regression Models</span><br>
-          <span style="color:#6e6a62">Prabrisha Rakshit, <strong style="font-weight:600;color:#3a3833">Zhenyu Wang</strong> (co-first author), T. Tony Cai, Zijian Guo · <em>The R Journal</em>, 2024</span><br>
-          <span style="font-size:14px;font-weight:500"><a href="https://zywang0701.github.io/SIHR/">website</a> · <a href="https://arxiv.org/abs/2109.03365">paper</a> · <a href="blog-sihr.html">blog</a></span>
-        </div>
-      </div>
-    </div>
-
-    <div style="margin-top:40px">
-      <h2 style="margin:0 0 14px;font-family:'Source Serif 4',serif;font-size:21px;font-weight:600;border-bottom:1px solid #e8e6e1;padding-bottom:8px">Software</h2>
-      <div style="display:flex;flex-wrap:wrap;gap:10px;font-size:14px">
-        <a href="https://zywang0701.github.io/SIHR/" style="border:1px solid #e8e6e1;border-radius:6px;padding:7px 13px;color:#3a3833"><strong>SIHR</strong> · inference in high-dim regression</a>
-        <a href="https://cran.r-project.org/web/packages/RobustIV/index.html" style="border:1px solid #e8e6e1;border-radius:6px;padding:7px 13px;color:#3a3833"><strong>RobustIV</strong> · robust instrumental variables</a>
-        <a href="https://cran.r-project.org/web/packages/MaximinInfer/index.html" style="border:1px solid #e8e6e1;border-radius:6px;padding:7px 13px;color:#3a3833"><strong>MaximinInfer</strong> · inference for maximin effects</a>
-        <a href="https://cran.r-project.org/web/packages/DLL/index.html" style="border:1px solid #e8e6e1;border-radius:6px;padding:7px 13px;color:#3a3833"><strong>DLL</strong> · decorrelated local linear estimator</a>
-      </div>
-    </div>
-
-  </div>
-
-  <div style="border-top:1px solid #e8e6e1;margin-top:48px">
-    <p style="max-width:860px;margin:0 auto;padding:18px 28px;font-size:13px;color:#9a958b">© 2026 Zhenyu (Zach) Wang 王振宇</p>
-  </div>
-</div>
-
-</x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;textZoom&quot;:{&quot;editor&quot;:&quot;range&quot;,&quot;default&quot;:1.05,&quot;min&quot;:0.9,&quot;max&quot;:1.25,&quot;step&quot;:0.05,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Typography&quot;}}">
-class Component extends DCLogic {
-  renderVals() {
-    return {
-      textZoom: this.props.textZoom ?? 1
-    };
-  }
-}
-</script>
-</body>
-</html>
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Home — Zhenyu (Zach) Wang</title>
+<meta name="description" content="Zhenyu (Zach) Wang is a Statistics Ph.D. candidate at Rutgers University studying statistical learning and large language models.">
+<link rel="canonical" href="https://zywang0701.github.io/">
+<meta name="theme-color" content="#982d43"><meta property="og:title" content="Home — Zhenyu (Zach) Wang"><meta property="og:description" content="Zhenyu (Zach) Wang is a Statistics Ph.D. candidate at Rutgers University studying statistical learning and large language models."><meta property="og:type" content="website"><meta property="og:image" content="https://zywang0701.github.io/assets/headshot.jpeg">
+<link rel="icon" href="assets/headshot.jpeg" type="image/jpeg"><link rel="stylesheet" href="styles.css"></head>
+<body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="shell header-inner"><a class="wordmark" href="index.html">Zhenyu (Zach) Wang</a><nav aria-label="Main navigation"><a href="index.html" aria-current="page">Home</a><a href="research.html">Research</a><a href="teaching.html">Teaching</a><a href="assets/Zhenyu_Wang_Resume.pdf" title="Read my research résumé (PDF)">Résumé</a></nav></div></header>
+<figure class="wedding-banner"><img src="assets/wedding-banner.jpg" alt="Our wedding by the Raritan River" fetchpriority="high"></figure>
+<main id="main" class="shell"><section class="profile" aria-labelledby="name"><div class="profile-copy"><h1 id="name">Zhenyu (Zach) Wang <span class="chinese-name" lang="zh">王振宇</span></h1><p class="role">Ph.D. Candidate in Statistics · Rutgers University</p>
+<p>I am a Ph.D. candidate in Statistics at Rutgers University, advised by <a href="https://zijguo.github.io/">Zijian Guo</a> and <a href="https://sites.google.com/view/yifan-hu">Yifan Hu</a>.</p>
+<p><strong>My research spans statistical learning and large language models.</strong> My earlier work focuses on distributionally robust learning, causal invariance, and statistical inference. More recently, I have been drawing on ideas from statistics, optimization, and operations research to understand and improve how large language models learn and reason, with a focus on post-training and budget-aware LLM inference.</p>
+<p class="education">Before Rutgers, I received my master’s degree from Columbia University and my bachelor’s degree in Finance from Shanghai Jiao Tong University.</p>
+<div class="profile-links"><a href="mailto:wangzy0701@gmail.com">Email</a><a href="https://scholar.google.com/citations?user=gvvAyzYAAAAJ">Google Scholar</a><a href="https://github.com/zywang0701">GitHub</a><a href="assets/Zhenyu_Wang_Resume.pdf" title="Read my research résumé (PDF)">Résumé (PDF)</a></div></div>
+<figure class="portrait"><img src="assets/headshot.jpeg" alt="Portrait of Zhenyu (Zach) Wang" width="256" height="256" fetchpriority="high"></figure></section><section class="home-section" aria-labelledby="news"><div class="section-heading"><h2 id="news">Recent news</h2></div><ul class="news-list">
+<li><time datetime="2026-10">Oct 2026</time><p><a href="research.html#price">PRICE</a> selected for a <a href="https://openreview.net/forum?id=0wIqnyxyew&amp;noteId=aqI9OGewoE">NeurIPS 2026 workshop oral presentation</a>, and accepted at MLxOR, RAAAI, and TTCL.</p></li>
+<li><time datetime="2026-09">Sep 2026</time><p>New preprint: <a href="research.html#dropd">Dr. OPD</a>, learning what to follow in on-policy distillation.</p></li>
+<li><time datetime="2026-04">Apr 2026</time><p><a href="research.html#drol">DRoL</a> published in <em>The Annals of Statistics</em>.</p></li>
+</ul></section><section class="home-section" aria-labelledby="selected"><div class="section-heading"><h2 id="selected">Selected research</h2><a class="section-action" href="research.html">All research <span aria-hidden="true">→</span></a></div><div class="research-cards"><article class="research-card"><a class="card-figure" href="assets/dropd-image.png" aria-label="View Dr. OPD illustration at full size"><img src="assets/dropd-image.png" alt="Dr. OPD: do not just follow the teacher; learn which token-level teacher signals help make the student better." loading="lazy"></a><div class="card-body"><div class="card-heading"><p class="eyebrow">LLM learning</p><h3><a href="research.html#dropd">Dr. OPD</a></h3></div><p class="card-question">Which teacher signals make a better student?</p><p class="card-description">OPD provides dense token-level supervision. We formulate optimal OPD as bilevel optimization, learning how to weight teacher signals to improve the student’s performance.</p><div class="card-meta"><p class="authors"><strong>Zhenyu Wang</strong><sup>*</sup>, Tianze Wang<sup>*</sup>, Linjun Zhang, Yifan Hu</p><p class="venue">Preprint · 2026</p><div class="paper-links"><a href="https://arxiv.org/abs/2609.38025">Paper</a><a href="https://github.com/zywang0701/Dr-OPD">Code</a></div></div></div></article><article class="research-card"><a class="card-figure" href="assets/price-image.png" aria-label="View PRICE illustration at full size"><img src="assets/price-image.png" alt="The Pareto frontier of LLM test-time compute: the best attainable accuracy at each token budget; the figure is illustrative." loading="lazy"></a><div class="card-body"><div class="card-heading"><p class="eyebrow">LLM reasoning</p><h3><a href="research.html#price">PRICE</a></h3></div><div class="recognition"><a class="recognition-badge" href="https://openreview.net/forum?id=0wIqnyxyew&amp;noteId=aqI9OGewoE">NeurIPS 2026 Workshop · Oral</a><p class="other-venues">Also accepted at NeurIPS 2026 workshops: <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/MLxOR/Authors" title="Mathematical Foundations and Operational Integration of ML for Uncertainty-Aware Decision-Making">MLxOR</a> · <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/RAAAI/Authors" title="Resource-Aware Agentic AI">RAAAI</a> · <a href="https://openreview.net/group?id=NeurIPS.cc/2026/Workshop/TTCL/Authors" title="Towards Test-Time Continual Learning Agents">TTCL</a></p></div><p class="card-question">How much accuracy can one more token buy?</p><p class="card-description">We derive a closed-form asymptotic cost–accuracy Pareto frontier for LLM test-time compute, then use it to guide adaptive rollouts and voting under a token budget.</p><div class="card-meta"><p class="authors"><strong>Zhenyu Wang</strong>, Xiaozhi Zhu, Yifan Hu</p><p class="venue">Preprint · 2026</p><div class="paper-links"><a href="papers/PRICE_ICLR.pdf">Paper</a><a href="https://github.com/zywang0701/PRICE">Code</a><a href="https://huggingface.co/datasets/zach-wang/PRICE-rollouts">Data</a></div></div></div></article><article class="research-card"><a class="card-figure" href="assets/drol-image.png" aria-label="View DRoL illustration at full size"><img src="assets/drol-image.png" alt="Geometric illustration of DRoL: source models, their convex hull, and the robust solution with and without a model-class constraint." loading="lazy"></a><div class="card-body"><div class="card-heading"><p class="eyebrow">Robust learning</p><h3><a href="research.html#drol">DRoL</a></h3></div><div class="recognition"><a class="recognition-badge journal-badge" href="https://doi.org/10.1214/25-AOS2578">The Annals of Statistics · 2026</a><p class="journal-context">A leading journal in statistical theory and methodology.</p></div><p class="card-question">How do we find the most robust model across data sources?</p><p class="card-description">We identify the model that maximizes worst-case predictive performance over mixtures of source populations, with no target labels required.</p><div class="card-meta"><p class="authors"><strong>Zhenyu Wang</strong>, Peter Bühlmann, Zijian Guo</p><p class="venue">The Annals of Statistics · 2026 · 54(2), 570–596</p><div class="paper-links"><a href="https://arxiv.org/abs/2309.02211">Paper</a><a href="https://drive.google.com/file/d/1DB-8P4KNQw2JvQtYcc1bRrczdeaAxolI/view?usp=sharing">Slides</a></div></div></div></article></div></section></main>
+<footer class="site-footer"><div class="shell footer-inner"><span>© 2026 Zhenyu (Zach) Wang <span lang="zh">王振宇</span></span><a href="mailto:wangzy0701@gmail.com">wangzy0701@gmail.com</a></div></footer></body></html>

@@ -1,4 +1,4 @@
 _site/
-papers/
+papers/*
+!papers/PRICE_ICLR.pdf
 .DS_Store
-
