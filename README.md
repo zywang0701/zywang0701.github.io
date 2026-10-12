@@ -13,8 +13,8 @@ SIHR is linked from its paper. The former paper-explanation blogs and standalone
 ## Preview
 Run `python -m http.server 8000` in this folder, then open http://localhost:8000/.
 
-## Résumé
-The current research résumé is at assets/Zhenyu_Wang_Resume.pdf. The navigation and homepage link to this PDF.
+## Academic CV
+The current academic CV is at assets/Zhenyu_Wang_Resume.pdf. The navigation and homepage link to this PDF. The existing URL is retained for compatibility.
 
 ## GitHub Pages
 Review locally before publishing. Copy the changed HTML, `styles.css`, and `papers/PRICE_ICLR.pdf` into the existing repository, and remove the six former `blog*.html` files. Preserve unrelated files, including any separately hosted SIHR project. Commit and push to the existing Pages source branch (the supplied repository uses `master`).
